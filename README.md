@@ -14,7 +14,10 @@ $ git clone https://github.com/a17maxsj/forza-rpi-telemetry.git
 
 $ npm install lcd
 
-Depending on which pins you have attached to the LCD display you might have to change th *rs*,*e* and *data pins*. Might extend the guide to include this at a later date.
+Depending on which pins you have attached to the LCD display you might have to change th *rs*,*e* and *data pins* in RPi-server.js. Might extend the guide to include this at a later date, the code in question is found below.
+
+
+*var Lcd = require('lcd'), lcd = new Lcd({  rs: 26,  e: 19, data: [13, 6, 5, 11],  cols: 16, rows: 2 });*
 
 **Running the program** 
 
