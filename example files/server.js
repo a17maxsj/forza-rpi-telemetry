@@ -186,6 +186,7 @@ server.on('message', function (message, remote) {
     obj.currentRaceTime = message.readFloatLE(jump); // seconds
     jump += 4;
 
+    //300
     obj.lapNumber = message.readUInt16LE(jump);
     jump += 2;
     obj.racePosition = message.readUInt8(jump);
@@ -201,6 +202,7 @@ server.on('message', function (message, remote) {
     jump += 1;
     obj.gear = message.readUInt8(jump);
     jump += 1;
+    console.log(jump);
     obj.steer = message.readUInt8(jump);
     jump += 1;
 
@@ -210,14 +212,7 @@ server.on('message', function (message, remote) {
     jump += 1;
 
     //console.log(remote.address + ':' + remote.port + ' - (' + obj.isRaceOn + '), Gear:' + obj.gear + " - Tire:" + obj.tireSlipRatioFrontLeft);
-   var rpm = ~~ obj.currentEngineRpm;
-   var kmh = obj.speed * 3.6;
-    console.clear();
-    console.log("current rpm: " + rpm);
-    console.log("current speed: " + kmh + " km/h");
-    console.log("gear: " + obj.gear);
 
-    console.log(message.readFloatLE(16));
 
 });
 
