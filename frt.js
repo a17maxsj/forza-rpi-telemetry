@@ -14,7 +14,7 @@ var Lcd = require('lcd'), lcd = new Lcd({  rs: 26,  e: 19, data: [13, 6, 5, 11],
 
 server.on('listening', function() {
     var address = server.address();
-    console.log('> UDP Server listening on ' + address.address + ":" + address.port);});
+    console.log('>  Listening on ' + address.address + ":" + address.port);});
 
 server.on('message', function(message, remote) {
 
