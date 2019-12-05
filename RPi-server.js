@@ -47,3 +47,8 @@ lcd.on('ready', function() {
     }, 100);
 });
 
+process.on('SIGINT', function() {
+    console.log( '\n'+'> Exiting....');
+    process.exit();
+  });
+  
